@@ -1,0 +1,58 @@
+from yacs.config import CfgNode as cfg
+#config tree
+Cfg = cfg()
+
+Cfg.DATALOADER = cfg()
+Cfg.DATALOADER.LOG_DIR = "./log/" #log dir and saved model dir
+Cfg.DATALOADER.DATALOADER_NUM_WORKERS = 8
+Cfg.DATALOADER.ROOT = "/xxx/"
+Cfg.DATALOADER.DATA_DIR = Cfg.DATALOADER.ROOT+"datasets/Market-1501-v15.09.15/"
+
+Cfg.MODEL = cfg()
+Cfg.MODEL.INPUT_SIZE = [128, 64] #HxW
+Cfg.MODEL.NUM_LAYERS_IENCODER = 2
+Cfg.MODEL.NUM_LAYERS_PENCODER = 2
+Cfg.MODEL.NUM_LAYERS_IGENERATOR = 2
+Cfg.MODEL.NUM_BLOCKS_PATN = 13
+Cfg.MODEL.NUM_BLOCKS_RESNET = 6
+Cfg.MODEL.DEVICE_ID = "1"#
+
+Cfg.MODEL.REID_WEIGHT = "/xxx/resnet50_person_reid_128x64.pth"
+Cfg.MODEL.MODEL_NECK  = 'bnneck'# If train with BNNeck, options: 'bnneck' or 'no'
+Cfg.MODEL.NECK_FEAT = 'after'
+
+Cfg.LOSS = cfg()
+Cfg.LOSS.L1_TYPE = 'L1+perL1'
+Cfg.LOSS.LAMBDA_L1 = 10.0
+Cfg.LOSS.LAMBDA_PER = 20.0
+Cfg.LOSS.NUM_LAYERS_VGG = 3
+Cfg.LOSS.GAN_WEIGHT = 5.0
+Cfg.LOSS.REID_WEIGHT = 1.0
+
+Cfg.SOLVER = cfg()
+Cfg.SOLVER.BATCHSIZE = 32
+Cfg.SOLVER.OPTIMIZER = 'Adam'
+Cfg.SOLVER.BASE_LR = 0.0002
+
+Cfg.SOLVER.DG_RATIO = 1
+
+Cfg.SOLVER.WEIGHT_DECAY = 0.0005
+Cfg.SOLVER.BIAS_LR_FACTOR = 2
+Cfg.SOLVER.WEIGHT_DECAY_BIAS = 0.0
+Cfg.SOLVER.MOMENTUM = 0.9
+
+Cfg.SOLVER.STEPS = [30, 60, 90, 120, 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600]
+Cfg.SOLVER.GAMMA = 0.6
+Cfg.SOLVER.WARMUP_FACTOR = 0.01
+Cfg.SOLVER.WARMUP_EPOCHS = 5
+Cfg.SOLVER.WARMUP_METHOD = "linear" #option: 'linear','constant'
+Cfg.SOLVER.LOG_PERIOD = 100 #iteration of display training log
+Cfg.SOLVER.CHECKPOINT_PERIOD = 5 #save model period
+Cfg.SOLVER.EVAL_PERIOD = 5 #validation period
+Cfg.SOLVER.MAX_EPOCHS = 1800
+
+Cfg.TEST = cfg()
+Cfg.TEST.BATCHSIZE = 128
+Cfg.TEST.WEIGHT = "/xxx/model_G_1800.pth"
+Cfg.TEST.GT_PATH = '/xxx/img2/'
+Cfg.TEST.GENERATED_PATH = '/xxx/fake_img2/'

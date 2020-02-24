@@ -1,0 +1,51 @@
+2019-08-19 10:58:17,336 pose-transfer-avs.test INFO: Running with config:
+DATALOADER:
+  DATALOADER_NUM_WORKERS: 8
+  DATA_DIR: /xxx/datasets/Market-1501-v15.09.15/
+  LOG_DIR: ./log/
+  ROOT: /xxx/
+LOSS:
+  GAN_WEIGHT: 5.0
+  L1_TYPE: L1+perL1
+  LAMBDA_L1: 10.0
+  LAMBDA_PER: 20.0
+  NUM_LAYERS_VGG: 3
+  REID_WEIGHT: 1.0
+MODEL:
+  DEVICE_ID: 1
+  INPUT_SIZE: [128, 64]
+  MODEL_NECK: bnneck
+  NECK_FEAT: after
+  NUM_BLOCKS_PATN: 13
+  NUM_BLOCKS_RESNET: 6
+  NUM_LAYERS_IENCODER: 2
+  NUM_LAYERS_IGENERATOR: 2
+  NUM_LAYERS_PENCODER: 2
+  REID_WEIGHT: /xxx/resnet50_person_reid_128x64.pth
+SOLVER:
+  BASE_LR: 0.0002
+  BATCHSIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 5
+  DG_RATIO: 1
+  EVAL_PERIOD: 5
+  GAMMA: 0.6
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 1800
+  MOMENTUM: 0.9
+  OPTIMIZER: Adam
+  STEPS: [30, 60, 90, 120, 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600]
+  WARMUP_EPOCHS: 5
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  BATCHSIZE: 128
+  GENERATED_PATH: /xxx/fake_img2/
+  GT_PATH: /xxx/img2/
+  WEIGHT: /xxx/model_G_1800.pth
+2019-08-19 10:58:27,604 pose-transfer-avs.test INFO: Entering Evaluation...
+2019-08-19 10:59:06,054 pose-transfer-avs.test INFO: Finished Evaluation...
+2019-08-19 11:00:16,317 pose-transfer-avs.test INFO: Compute structured similarity score (SSIM)...
+2019-08-19 11:01:42,645 pose-transfer-avs.test INFO: SSIM score 0.33926007463963126
