@@ -1,7 +1,8 @@
 # Towards Efficient Data Generation for Person ReID
 Paper: "Towards Efficient Data Generation for Person Re-Identification" (under review)
 
-This temporary repository holds the codebase, data, and models for our paper. After the double-blind review, we will move it to our personal Github.
+This temporary repository holds the codebase, data, and models for our paper.
+
 ## Pipeline
 <div align=center>
 <img src='imgs/pipeline.png' width='800'>
