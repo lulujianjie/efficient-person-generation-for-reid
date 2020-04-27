@@ -31,9 +31,6 @@ This temporary repository holds the codebase, data, and models for our paper.
     │   └── graph-clustering    # link prediction and data purifying
     │       └── ...             
     ├──  person-reid-baselines  # training and testing code for person reid             
-    │   └── resnet50            # reid using resnet50
-    │       └── ...             
-    │   └── PCB                 # reid using PCB
     │       └── ...             
     ├── LICENSE
     └── README.md
