@@ -10,7 +10,7 @@ class GCN(nn.Module):
         self.conv1 = GraphConv(2048, 1024, MeanAggregator)
         self.conv2 = GraphConv(1024, 512, MeanAggregator)
         self.conv3 = GraphConv(512, 256, MeanAggregator)
-        self.conv4 = GraphConv(256, 256, MeanAggregator)
+#         self.conv4 = GraphConv(256, 256, MeanAggregator)
 
         self.classifier = nn.Sequential(
             nn.Linear(256, 256),
@@ -31,7 +31,7 @@ class GCN(nn.Module):
         x = self.conv1(x, A)
         x = self.conv2(x, A)
         x = self.conv3(x, A)
-        x = self.conv4(x, A)
+#         x = self.conv4(x, A)
         k1 = one_hop_idcs.size(-1)
         dout = x.size(-1)
         edge_feat = torch.zeros(B, k1, dout).cuda()
