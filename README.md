@@ -38,7 +38,7 @@ This temporary repository holds the codebase, data, and models for our paper.
 ## Prerequisites
 1. `cd` to folder where you want to download this repo
 
-2. Run `git clone https://github.com/4review/paper1370.git`
+2. Run `git clone https://github.com/lulujianjie/efficient-person-generation-for-reid.git`
 
 3. Install dependencies:
     - python3 (>=3.5)
@@ -107,7 +107,7 @@ python graph-clustering/train.py
 
 
 ## Citation
-Please cite the following paper if you use this repository in your reseach.
+Please cite the following paper if you use this repository in your research.
 TBD
 
 ## Acknowledgment
@@ -115,5 +115,3 @@ TBD
 
 ## Contact
 TBD
-
-**用我的滴滴云AI大师码0003在滴滴云上购买GPU/vGPU/机器学习产品可享受9折优惠，[点击](https://www.didiyun.com)前往滴滴云官网**
