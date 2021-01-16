@@ -1,5 +1,5 @@
 # Towards Efficient Data Generation for Person ReID
-Paper: "Towards Efficient Data Generation for Person Re-Identification" (under review)
+Paper: "Towards Efficient Data Generation for Person Re-Identification" (accepted by IEEE Trans on Multimedia)
 
 This temporary repository holds the codebase, data, and models for our paper.
 
